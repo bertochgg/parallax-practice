@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web con scroll image</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+        <section>
+            <img src="assets/stars.png" id="stars">
+            <img src="assets/moon.png" id="moon">
+            <img src="assets/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="assets/mountains_front.png" id="mountains_front">
+        </section>
+
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Web</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam accusamus dolorem, esse maxime expedita nihil consectetur consequatur sequi placeat. Dignissimos dolor id aliquid porro est odit inventore nemo ut delectus!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem a doloremque id esse ipsa officia magni, corrupti eveniet ad maxime expedita optio? Facere, nam magni voluptatem quae est maxime. Doloribus!. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores beatae autem iure corporis neque dolor repellat, commodi eaque perspiciatis fugiat alias repellendus, animi magni tempora ducimus. Repellendus delectus id harum!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error fugiat vero ipsam autem a minus ex repellendus suscipit quos aspernatur, repudiandae laudantium dignissimos? Nam esse in, ipsa ipsum minima mollitia.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae numquam placeat quidem qui officiis molestiae enim veniam, alias accusamus, sunt voluptatum vero dolorem veritatis quia, quis ad eligendi animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus molestias, reiciendis illum officia rem magni laboriosam labore repudiandae error omnis. Similique totam, illo aperiam officiis id obcaecati aliquid. Fuga, assumenda?. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ad deserunt eligendi adipisci odio placeat, exercitationem nesciunt cumque, obcaecati quam velit sapiente quasi sint at alias molestias sunt, repellat aliquam. </p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+
+            })
+        </script>
+</body>
+</html>
